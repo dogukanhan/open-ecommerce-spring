@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div id="main-menu" th:fragment="main-menu">
+    <div class="container">
+        <nav class="navbar navbar-default">
+            <div class="navbar-header">
+                <button aria-controls= "navbar" data-target="#navbar" data-toggle="collapse" class="navbar-toggle collapsed" type="button"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button>
+                <a href="#" class="navbar-brand">menu</a> </div>
+            <div class="navbar-collapse collapse" id="navbar">
+                <ul class="nav navbar-nav" >
+                    <li><a href="/">HOME</a></li>
+                    <li th:each="category : ${categories}">
+                        <a href="#" th:text="${category.name}" th:if="${category.children.isEmpty()}"/>
+                        <a th:if="${!category.children.isEmpty()}" aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="#" th:text="${category.name}"> PAGES<span class="caret"></span></a>
+                        <ul class="dropdown-menu" th:if="${!category.children.isEmpty()}">
+                            <li th:each="child : ${category.children}">
+                                <a href="#" th:text="${child.name}"/>
+                            </li>
+
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                    </li>
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+</div>
+</body>
+</html>
