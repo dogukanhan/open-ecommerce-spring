@@ -15,7 +15,7 @@ public interface ProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT p FROM Product AS p LEFT JOIN p.productImages WHERE p.id = :productId")
     Optional<Product> findProductWithProductImageById(Long productId);
 
-    List<Product> findAllByCategoryOrderById(Long categoryId, Pageable pageable);
+    List<Product> findAllByCategoryIdOrderById(Long categoryId, Pageable pageable);
 
     long countByCategory(Long categoryId);
 }

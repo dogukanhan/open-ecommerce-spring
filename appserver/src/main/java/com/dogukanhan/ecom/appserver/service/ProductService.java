@@ -34,7 +34,7 @@ public class ProductService {
     }
 
     public List<Product> findAllByCategoryOrderById(Long categoryId, Integer page) {
-        return productRepository.findAllByCategoryOrderById(categoryId, PageRequest.of(page, PAGINATION_SIZE));
+        return productRepository.findAllByCategoryIdOrderById(categoryId, PageRequest.of(page, PAGINATION_SIZE));
     }
 
     public Long create(ProductCreateDTO productCreateDTO) {
