@@ -64,6 +64,8 @@ public class StartupApplicationListenerExample implements
             product.setName("Product " + i);
             product.setPrice(BigDecimal.valueOf(10 * i));
             product.setPiece(i * 5);
+            product.setOldPrice(product.getPrice().add(BigDecimal.valueOf(20 * i)));
+
             product.setDetail("Product " + i);
             product.setCategory(category);
             product.setThumbnail("c2cb153f-7adb-4a2b-8d22-19f3e06cb41b.png");

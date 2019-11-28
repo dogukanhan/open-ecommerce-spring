@@ -159,7 +159,7 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-md-3 header-right">
+                    <div class="col-md-3 header-right"f>
                         <div class="cart">
                             <div class="cart-icon dropdown"></div>
                             <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown" class="dropdown-toggle" href="cart.html">My Cart( 2 )<span> $261.20</span></a>
@@ -470,182 +470,14 @@
                         <div class="product-grid-view">
                             <ul>
                                 <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
+                                    <div class="item col-md-4 col-sm-6 col-xs-6" th:each="product : ${products}">
                                         <div class="product-block ">
                                             <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/1prod281x366.jpg"></a> </div>
                                             <div class="product-details">
                                                 <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
+                                                    <h4><a href="product-detail-view.html" th:text="${product.name}">Black African Print Pencil Skirt </a></h4>
                                                 </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/2prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/3prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/4prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/5prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/2prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/6prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/6prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
-                                                <div class="product-hov">
-                                                    <ul>
-                                                        <li class="wish"><a href="#"></a></li>
-                                                        <li class="addtocart"><a href="#">Add to Cart</a> </li>
-                                                        <li class="compare"><a href="#"></a></li>
-                                                    </ul>
-                                                    <div class="review"> <span class="rate"> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star rated"></i> <i class="fa fa-star"></i> </span> </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="item col-md-4 col-sm-6 col-xs-6">
-                                        <div class="product-block ">
-                                            <div class="image"> <a href="product-detail-view.html"><img class="img-responsive" title="T-shirt" alt="T-shirt" src="/assets/images/product/7prod281x366.jpg"></a> </div>
-                                            <div class="product-details">
-                                                <div class="product-name">
-                                                    <h4><a href="product-detail-view.html">Black African Print Pencil Skirt </a></h4>
-                                                </div>
-                                                <div class="price"> <span class="price-old">$123.20</span> <span class="price-new">$14.99</span> </div>
+                                                <div class="price"> <span class="price-old" th:text="${product.oldPrice}">$123.20</span> <span class="price-new" th:text="${product.price}">$14.99</span> </div>
                                                 <div class="product-hov">
                                                     <ul>
                                                         <li class="wish"><a href="#"></a></li>

@@ -28,9 +28,10 @@ public class Product extends AbstractDateEntity {
 
     private String detail;
 
+    private BigDecimal oldPrice;
+
     private BigDecimal price;
 
     private int piece;
-
 
 }
