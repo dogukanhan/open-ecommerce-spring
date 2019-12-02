@@ -16,8 +16,6 @@ import java.util.List;
 @ToString
 public class Category {
 
-    public static final long ROOT_ID =0;
-
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private Long id;

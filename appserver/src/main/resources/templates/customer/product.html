@@ -183,7 +183,8 @@
                         <div class="cart">
                             <div class="cart-icon dropdown"></div>
                             <a aria-expanded="false" aria-haspopup="true" role="button" data-toggle="dropdown"
-                               class="dropdown-toggle" href="cart.html">My Cart( 2 )<span> $261.20</span></a>
+                               class="dropdown-toggle" href="cart.html"><span th:text=" 'My Cart(' + ${bucket.products.size()} + ')' ">
+                                My Cart( 2 ) </span><span> $261.20</span></a>
                             <ul class="dropdown-menu pull-right cart-dropdown-menu">
                                 <li>
                                     <table class="table table-striped">
@@ -541,7 +542,9 @@
                                             </div>
                                         </div>
                                         <div class="add-to-cart">
-                                            <button type="submit" class="btn btn-default">Add to Cart</button>
+                                            <form th:action="@{/product/{id}/add-to-cart/(id=${mProduct.id})}" method="POST">
+                                                <button type="submit" class="btn btn-default">Add to Cart</button>
+                                            </form>
                                         </div>
                                         <ul class="add-links">
                                             <li><a class="add-to-wishlist" href="#"> <i class="fa fa-heart-o"></i> Add
