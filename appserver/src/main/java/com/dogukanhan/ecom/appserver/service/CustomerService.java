@@ -4,7 +4,9 @@ import com.dogukanhan.ecom.appserver.customer.auth.CustomerCreateDto;
 import com.dogukanhan.ecom.appserver.entity.Customer;
 import com.dogukanhan.ecom.appserver.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
+@Service
 @RequiredArgsConstructor
 public class CustomerService {
 

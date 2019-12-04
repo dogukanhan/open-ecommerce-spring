@@ -27,6 +27,7 @@ public class CategoryService {
     public List<Category> findAllByParentOrderByName(Category category, int page) {
         return categoryRepository.findAllByParentOrderByName(category, PageRequest.of(page, PAGINATION_SIZE));
     }
+
     public List<Category> findAllByParentOrderByName(Category category) {
         return categoryRepository.findAllByParentOrderByName(category);
     }
@@ -46,6 +47,12 @@ public class CategoryService {
 
     public void deleteById(Long id) {
 
+        Category category = findOneById(id);
+        var childs = categoryRepository.findAllByParentOrderByName(category);
+        childs.forEach(cat->{
+            cat.setParent(category.getParent());
+            categoryRepository.save(cat);
+        });
         categoryRepository.deleteById(id);
 
     }
