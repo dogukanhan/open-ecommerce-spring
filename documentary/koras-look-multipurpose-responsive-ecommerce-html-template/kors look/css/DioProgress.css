@@ -1,0 +1,19 @@
+
+
+
+div.dioprogress_size_l { height: 45px; }
+
+div.dioprogress_size_xl { height: 20px; }
+
+div.dioprogress_padding { padding: 0px; }
+
+div.dioprogress_bar { }
+#progress1 , #progress2 , #progress3 , #progress4 {
+    margin-left: 45px;
+}
+#progress1 > h5 , #progress2 > h5 , #progress3 > h5 , #progress4 > h5 {
+    color: #000;
+    font-weight: 400;
+    margin: 0 0 -45px;
+    padding: 15px;
+}
