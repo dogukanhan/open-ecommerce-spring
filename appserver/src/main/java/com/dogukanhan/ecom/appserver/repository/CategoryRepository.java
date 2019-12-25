@@ -21,5 +21,9 @@ public interface CategoryRepository extends PagingAndSortingRepository<Category,
     @Query("SELECT NEW com.dogukanhan.ecom.appserver.admin.dto.CategorySelectDTO(id,name) FROM Category")
     List<CategorySelectDTO> findAllOnlyNameAndId();
 
+    @Query(nativeQuery = true, value = "SELECT * FROM category_selection")
+    List<CategorySelectDTO> findAllWithView();
+
+
     List<Category> findAllByParentOrderByName(Category category);
 }

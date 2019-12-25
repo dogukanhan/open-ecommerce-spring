@@ -52,65 +52,11 @@
                     <div class="row">
                         <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                             <div class="card">
-
-                                <div id="alert-message"
-                                     th:if="${(param.create != null) and (param.create[0] == 'true')}">
-                                    <div class="alert alert-info" role="alert">
-                                        Category Created.
-                                    </div>
+                                <div style="overflow-y: scroll; height:500px;">
+                                    <ol>
+                                        <li th:each="log : ${logs}"><p th:text="${log}"></p></li>
+                                    </ol>
                                 </div>
-
-                                <div id="alert-message"
-                                     th:if="${(param.delete != null) and (param.delete[0] == 'true')}">
-                                    <div class="alert alert-info" role="alert">
-                                        Category Removed
-                                    </div>
-                                </div>
-
-                                <a th:href="@{/admin/category/create/}" class="btn btn-success">Create New </a>
-                                <h5 class="card-header" th:text>Categories</h5>
-
-                                <div class="card-body p-0">
-                                    <div class="table-responsive">
-                                        <table class="table">
-                                            <thead class="bg-light">
-                                            <tr class="border-0">
-                                                <th class="border-0">Id</th>
-                                                <th class="border-0">Category Name</th>
-                                                <th class="border-0">Remove</th>
-                                            </tr>
-                                            </thead>
-                                            <tbody>
-                                            <tr th:each="category : ${categories}">
-                                                <td th:text="${category.id}">1</td>
-                                                <td>
-                                                    <a th:href="@{/admin/category/{id}/0/(id=${category.id})}">
-                                                        <i class="btn btn-primary fas fa-edit btn-category-edit"></i><span
-                                                            th:text="${category.name}"> Product #1</span>
-                                                    </a>
-                                                </td>
-                                                <td>
-                                                    <a th:href="@{/admin/category/delete/{id}/(id=${category.id})}"
-                                                       class="btn btn-primary">
-                                                        <i class="fas fa-fw fa-trash"></i>
-                                                    </a>
-                                                </td>
-                                            </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-                                </div>
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination ">
-                                        <li class="page-item" th:each="i: ${#numbers.sequence(1, paginationSize+1)}"
-                                            th:classappend="${i == page+1} ? active : ' ' "
-                                        >
-                                            <a class="page-link"
-                                               th:href="@{/admin/category/{page}/(page=${i-1})}" th:text="${i}"
-                                            >1</a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>

@@ -31,7 +31,7 @@
                 <div class="row">
                     <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 col-12">
                         <div class="page-header">
-                            <h2 class="pageheader-title">Categories</h2>
+                            <h2 class="pageheader-title">Customers</h2>
                             <p class="pageheader-text">Nulla euismod urna eros, sit amet scelerisque torton lectus vel
                                 mauris facilisis faucibus at enim quis massa lobortis rutrum.</p>
                             <div class="page-breadcrumb">
@@ -76,12 +76,12 @@
                                             <thead class="bg-light">
                                             <tr class="border-0">
                                                 <th class="border-0">Id</th>
-                                                <th class="border-0">Category Name</th>
+                                                <th class="border-0">Customer Name</th>
                                                 <th class="border-0">Remove</th>
                                             </tr>
                                             </thead>
                                             <tbody>
-                                            <tr th:each="category : ${categories}">
+                                            <tr th:each="category : ${customers}">
                                                 <td th:text="${category.id}">1</td>
                                                 <td>
                                                     <a th:href="@{/admin/category/{id}/0/(id=${category.id})}">
@@ -100,17 +100,6 @@
                                         </table>
                                     </div>
                                 </div>
-                                <nav aria-label="Page navigation example">
-                                    <ul class="pagination ">
-                                        <li class="page-item" th:each="i: ${#numbers.sequence(1, paginationSize+1)}"
-                                            th:classappend="${i == page+1} ? active : ' ' "
-                                        >
-                                            <a class="page-link"
-                                               th:href="@{/admin/category/{page}/(page=${i-1})}" th:text="${i}"
-                                            >1</a>
-                                        </li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>

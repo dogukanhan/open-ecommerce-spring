@@ -6,6 +6,8 @@ import com.dogukanhan.ecom.appserver.repository.CustomerRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 @RequiredArgsConstructor
 public class CustomerService {
@@ -21,5 +23,9 @@ public class CustomerService {
 
         repository.save(customer);
 
+    }
+
+    public List<Customer> findAll() {
+        return repository.findAll();
     }
 }

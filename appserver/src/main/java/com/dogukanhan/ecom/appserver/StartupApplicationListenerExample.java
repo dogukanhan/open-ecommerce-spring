@@ -2,11 +2,14 @@ package com.dogukanhan.ecom.appserver;
 
 import com.dogukanhan.ecom.appserver.entity.*;
 import com.dogukanhan.ecom.appserver.repository.*;
+import com.dogukanhan.ecom.appserver.service.CustomerService;
+import org.hibernate.SessionFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
+import javax.persistence.EntityManagerFactory;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.Map;
@@ -31,58 +34,70 @@ public class StartupApplicationListenerExample implements
     @Autowired
     private MProductRepository mProductRepository;
 
+    @Autowired
+    private CustomerRepository customerRepository;
+
     @Override
     public void onApplicationEvent(ContextRefreshedEvent event) {
 
-        categoryRepository.save(new Category("Books"));
-        categoryRepository.save(new Category("Movies"));
-        categoryRepository.save(new Category("Electronics"));
-        var comp = new Category("Computers");
-        categoryRepository.save(comp);
-        var laptop = new Category(comp, "Laptop");
-        categoryRepository.save(laptop);
-        comp.setChildren(List.of(laptop));
-        categoryRepository.save(comp);
+        if(categoryRepository.count()  == 0) {
 
-        categoryRepository.save(new Category("Mobile"));
-        categoryRepository.save(new Category("Clothes"));
+            categoryRepository.save(new Category("Books"));
+            categoryRepository.save(new Category("Movies"));
+            categoryRepository.save(new Category("Electronics"));
+            var comp = new Category("Computers");
+            categoryRepository.save(comp);
+            var laptop = new Category(comp, "Laptop");
+            categoryRepository.save(laptop);
+            comp.setChildren(List.of(laptop));
+            categoryRepository.save(comp);
 
-        Category category = new Category("Shoes");
-        categoryRepository.save(category);
+            categoryRepository.save(new Category("Mobile"));
+            categoryRepository.save(new Category("Clothes"));
 
-        CategoryField color = new CategoryField();
-        color.setName("Color");
-        color.setFieldValues(List.of("Red", "Black", "Blue", "Yellow"));
-        categoryFieldRepository.save(color);
+            Category category = new Category("Shoes");
+            categoryRepository.save(category);
 
-        category.setFields(List.of(color));
-        categoryRepository.save(category);
+            CategoryField color = new CategoryField();
+            color.setName("Color");
+            color.setFieldValues(List.of("Red", "Black", "Blue", "Yellow"));
+            categoryFieldRepository.save(color);
 
-        for (int i = 0; i < 20; i++) {
+            category.setFields(List.of(color));
+            categoryRepository.save(category);
 
-            Product product = new Product();
-            product.setName("Product " + i);
-            product.setPrice(BigDecimal.valueOf(10 * i));
-            product.setPiece(i * 5);
-            product.setOldPrice(product.getPrice().add(BigDecimal.valueOf(20 * i)));
+            for (int i = 0; i < 20; i++) {
 
-            product.setDetail("Product " + i);
-            product.setCategory(category);
-            product.setThumbnail("c2cb153f-7adb-4a2b-8d22-19f3e06cb41b.png");
-            productRepository.save(product);
-            if (mProductRepository.findOne(product.getId()).isEmpty()) {
-                MProduct mProduct = new MProduct(product, Map.of(color, "Red"));
-                mProductRepository.save(mProduct);
+                Product product = new Product();
+                product.setName("Product " + i);
+                product.setPrice(BigDecimal.valueOf(10 * i));
+                product.setPiece(i * 5);
+                product.setOldPrice(product.getPrice().add(BigDecimal.valueOf(20 * i)));
+
+                product.setDetail("Product " + i);
+                product.setCategory(category);
+                product.setThumbnail("c2cb153f-7adb-4a2b-8d22-19f3e06cb41b.png");
+                productRepository.save(product);
+                if (mProductRepository.findOne(product.getId()).isEmpty()) {
+                    MProduct mProduct = new MProduct(product, Map.of(color, "Red"));
+                    mProductRepository.save(mProduct);
+                }
+
+                ProductImage productImage = new ProductImage();
+                productImage.setLink("c2cb153f-7adb-4a2b-8d22-19f3e06cb41b.png");
+                productImage.setProduct(product);
+                productImageRepository.save(productImage);
+
+                product.setProductImages(List.of(productImage));
+                productRepository.save(product);
             }
 
-            ProductImage productImage = new ProductImage();
-            productImage.setLink("c2cb153f-7adb-4a2b-8d22-19f3e06cb41b.png");
-            productImage.setProduct(product);
-            productImageRepository.save(productImage);
+            for (int i = 0; i < 10; i++) {
+                Customer customer = new Customer();
+                customer.setName("Customer " + i);
+                customerRepository.save(customer);
+            }
 
-            product.setProductImages(List.of(productImage));
-            productRepository.save(product);
         }
-
     }
 }

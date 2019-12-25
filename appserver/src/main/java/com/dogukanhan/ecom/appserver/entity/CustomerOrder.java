@@ -11,7 +11,7 @@ import java.util.List;
 @Getter
 @Setter
 public class CustomerOrder extends AbstractDateEntity {
-
+    //Useless remove this
     private Date date;
 
     @ManyToMany
